@@ -1,0 +1,24 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+set -euo pipefail
+
+# Re-run when Brewfile or Brewfile.lock.json changes.
+# Brewfile: {{ include "Brewfile" | sha256sum }}
+# Brewfile.lock.json: {{ include "Brewfile.lock.json" | sha256sum }}
+
+if [ -x /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [ -x /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+else
+  echo "ERROR: Homebrew is not installed." >&2
+  exit 1
+fi
+
+echo "Running brew bundle..."
+
+brew bundle --file="{{ joinPath .chezmoi.sourceDir "Brewfile" }}"
+
+echo "brew bundle completed."
+{{- end }}

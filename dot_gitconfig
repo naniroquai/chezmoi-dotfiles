@@ -1,0 +1,21 @@
+[user]
+	name = Tatsushi Toji
+	email = 28854043+tatsushitoji@users.noreply.github.com
+
+[github]
+	user = tatsushitoji
+
+[ghq]
+	root = ~/ghq
+
+[credential]
+	helper = osxkeychain
+
+[credential "https://github.com"]
+	username = tatsushitoji
+
+[includeIf "gitdir:~/ghq/github.com/naniroquai/"]
+	path = ~/.gitconfig-naniroquai
+
+[includeIf "gitdir:~/.local/share/chezmoi/"]
+	path = ~/.gitconfig-naniroquai

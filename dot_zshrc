@@ -1,0 +1,17 @@
+# init starship
+eval "$(starship init zsh)"
+
+# init completion for fzf-tab
+autoload -Uz compinit && compinit
+
+# init sheldon
+eval "$(sheldon source)"
+
+# activate mise
+eval "$(mise activate zsh)"
+
+# activate direnv
+eval "$(direnv hook zsh)"
+
+# activate worktrunk
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi

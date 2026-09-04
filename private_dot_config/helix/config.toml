@@ -1,0 +1,128 @@
+[editor]
+# 行番号
+line-number = "relative"
+
+# 現在行をハイライト
+cursorline = true
+
+# カーソル周辺のスクロール余白
+scrolloff = 8
+
+# マウス操作
+mouse = true
+
+# 自動フォーマット
+auto-format = true
+
+# 自動補完
+auto-completion = true
+
+# Tree-sitter ベースのインデント
+indent-heuristic = "hybrid"
+
+# 保存時に末尾改行を追加
+insert-final-newline = true
+
+# 保存時に行末の不要な空白を削除
+trim-trailing-whitespace = true
+
+# 診断を行末に表示
+end-of-line-diagnostics = "hint"
+
+# ----------------------------------------
+# Whitespace
+# ----------------------------------------
+
+[editor.whitespace]
+render = "all"
+
+[editor.whitespace.characters]
+space = "·"
+tab = "→"
+newline = "⏎"
+nbsp = "⍽"
+nnbsp = "␣"
+
+# ----------------------------------------
+# LSP
+# ----------------------------------------
+
+[editor.lsp]
+display-messages = true
+display-inlay-hints = true
+
+
+# ----------------------------------------
+# Inline diagnostics
+# ----------------------------------------
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+
+# ----------------------------------------
+# File picker
+# ----------------------------------------
+
+[editor.file-picker]
+hidden = false
+git-ignore = true
+git-global = true
+git-exclude = true
+
+
+# ----------------------------------------
+# Cursor
+# ----------------------------------------
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+
+# ----------------------------------------
+# Soft wrap
+# ----------------------------------------
+
+[editor.soft-wrap]
+enable = false
+
+
+# ----------------------------------------
+# Status line
+# ----------------------------------------
+
+[editor.statusline]
+left = [
+  "mode",
+  "spinner",
+  "version-control",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+]
+
+center = []
+
+right = [
+  "diagnostics",
+  "selections",
+  "position",
+  "position-percentage",
+  "file-type",
+  "file-encoding",
+  "file-line-ending",
+]
+
+
+# ----------------------------------------
+# Auto save
+# ----------------------------------------
+
+[editor.auto-save]
+focus-lost = true
+
+[editor.auto-save.after-delay]
+enable = true
+timeout = 3000
